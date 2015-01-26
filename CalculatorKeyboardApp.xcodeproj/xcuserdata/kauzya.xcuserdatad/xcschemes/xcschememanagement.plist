@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>CalculatorKeyboard.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>CalculatorKeyboardApp.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>57DFCA891A7609E60073A4E2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>57DFCA9D1A7609F70073A4E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
