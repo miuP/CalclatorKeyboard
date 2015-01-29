@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57CDA1EB1A7A2B9C00883949 /* Calclator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CDA1EA1A7A2B9C00883949 /* Calclator.swift */; };
 		57DFCA781A7609E60073A4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFCA771A7609E60073A4E2 /* AppDelegate.swift */; };
 		57DFCA7B1A7609E60073A4E2 /* CalculatorKeyboardApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 57DFCA791A7609E60073A4E2 /* CalculatorKeyboardApp.xcdatamodeld */; };
 		57DFCA7D1A7609E60073A4E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DFCA7C1A7609E60073A4E2 /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		57CDA1EA1A7A2B9C00883949 /* Calclator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calclator.swift; sourceTree = "<group>"; };
 		57DFCA721A7609E60073A4E2 /* CalculatorKeyboardApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CalculatorKeyboardApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57DFCA761A7609E60073A4E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		57DFCA771A7609E60073A4E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				57DFCAA21A7609F70073A4E2 /* KeyboardViewController.swift */,
+				57CDA1EA1A7A2B9C00883949 /* Calclator.swift */,
 				57DFCAAB1A760A580073A4E2 /* CalculatorKeyboardView.xib */,
 				57DFCAA01A7609F70073A4E2 /* Supporting Files */,
 			);
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57DFCAA31A7609F70073A4E2 /* KeyboardViewController.swift in Sources */,
+				57CDA1EB1A7A2B9C00883949 /* Calclator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,6 +545,7 @@
 				57DFCA961A7609E70073A4E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57DFCA971A7609E70073A4E2 /* Build configuration list for PBXNativeTarget "CalculatorKeyboardAppTests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +554,7 @@
 				57DFCA991A7609E70073A4E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57DFCAA71A7609F70073A4E2 /* Build configuration list for PBXNativeTarget "CalculatorKeyboard" */ = {
 			isa = XCConfigurationList;
@@ -557,6 +563,7 @@
 				57DFCAA91A7609F70073A4E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
