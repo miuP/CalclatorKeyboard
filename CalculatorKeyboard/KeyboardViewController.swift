@@ -12,7 +12,11 @@ class KeyboardViewController: UIInputViewController {
 
     @IBOutlet var nextKeyboardButton: UIButton!
     @IBOutlet weak var answerLabel: UILabel!
-    var isDecimal : Bool = false
+    @IBOutlet weak var operatorLabel: UILabel!
+    
+    var isDecimal: Bool = false
+    var needClear: Bool = true
+    var reveiveInput: Bool = true
     
     var calclator = Calclator()
     
@@ -26,11 +30,20 @@ class KeyboardViewController: UIInputViewController {
         super.viewDidLoad()
         var keyboardView = UINib(nibName:"CalculatorKeyboardView", bundle:nil).instantiateWithOwner(self,options:nil)[0] as UIView
         self.inputView.addSubview(keyboardView)
+        answerLabel.font = UIFont(name:"DBLCDTempBlack", size:25.0)
+        operatorLabel.text = ""
     }
     
     
     @IBAction func numberButtonTapped(sender: AnyObject) {
+        if !reveiveInput {
+            return
+        }
         let input: UIButton! = sender as UIButton
+        if needClear {
+            answerLabel.text = ""
+            needClear = false
+        }
         if answerLabel.text?.utf16Count < 10 {
             answerLabel.text = answerLabel.text! + input.titleLabel!.text!
         }
@@ -38,10 +51,10 @@ class KeyboardViewController: UIInputViewController {
     
     @IBAction func operatorButtonTapped(sender: AnyObject) {
         calclator.push(answerLabel.text!)
-        answerLabel.text = ""
+        needClear = true
         let buttonTitle: String = (sender as UIButton).titleLabel!.text!
-        
-        if calclator.op != nil {
+        if calclator.op  != Calclator.Operator.null {
+            println(calclator.op)
             answerLabel.text = calclator.getAnswer()
         }
         
@@ -57,19 +70,36 @@ class KeyboardViewController: UIInputViewController {
             default:
                 break
         }
-        
-        
-        
+        operatorLabel.text = buttonTitle
+        reveiveInput = true
         isDecimal = false
     }
 
     @IBAction func equalButtonTapped(sender: AnyObject) {
-        answerLabel.text = ""
+        calclator.push(answerLabel.text!)
+        
+        if calclator.op  != Calclator.Operator.null {
+            answerLabel.text = calclator.getAnswer()
+            reveiveInput = false
+            operatorLabel.text = ""
+        }
+        
     }
     
     @IBAction func clearButtonTapped(sender: AnyObject) {
-        answerLabel.text = ""
+        if !reveiveInput {
+            return
+        }
+        answerLabel.text = "0"
+        needClear = true
         isDecimal = false
+    }
+    
+    @IBAction func allClearButtonTapped(sender: AnyObject) {
+        answerLabel.text = "0"
+        calclator = Calclator()
+        reveiveInput = true
+        needClear = true
     }
     
     @IBAction func decimalPointButtonTapped(sender: AnyObject) {

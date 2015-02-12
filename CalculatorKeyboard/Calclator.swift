@@ -15,17 +15,18 @@ class Calclator {
         case sub
         case mul
         case div
+        case null
     }
     
     var firstNum: Double!
     var secondNum: Double!
-    var op: Operator!
+    var op: Operator
     
     
     init() {
         firstNum = nil
         secondNum = nil
-        op = Operator.add
+        op = Operator.null
     }
     
     private class func isDouble(num: Double) -> Bool {
@@ -36,28 +37,30 @@ class Calclator {
     }
     
     private func calclate() -> Double {
-        switch self.op! {
+        display()
+        if secondNum == nil {
+            return firstNum
+        }
+        
+        switch self.op {
             case Operator.add: return self.firstNum + self.secondNum
             case Operator.sub: return self.firstNum - self.secondNum
             case Operator.mul: return self.firstNum * self.secondNum
             case Operator.div: return self.firstNum / self.secondNum
-            default: break
+            case Operator.null: return (secondNum != nil ? secondNum : firstNum);
         }
     }
     
     func getAnswer() -> String {
-        if firstNum != nil && secondNum != nil {
             let result = calclate()
-            firstNum = result
-            secondNum = nil
-            op = nil
+            self.firstNum = result
+            self.secondNum = nil
+            op = Operator.null
             if Calclator.isDouble(result) {
                 return String(format: "%f", result)
             } else {
                 return String(format: "%d", Int(result))
             }
-        }
-        return ""
     }
     
     func push(string: String) -> Bool {
@@ -72,5 +75,10 @@ class Calclator {
         return false
     }
     
+    func display() {
+        print(firstNum)
+        print(op.hashValue)
+        println(secondNum)
+    }
     
 }

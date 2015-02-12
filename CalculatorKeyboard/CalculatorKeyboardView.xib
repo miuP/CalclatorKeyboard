@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="answerLabel" destination="q51-g3-KYr" id="tBe-fo-3Q3"/>
                 <outlet property="nextKeyboardButton" destination="JoP-bI-ChO" id="GJ7-st-Cui"/>
+                <outlet property="operatorLabel" destination="prX-Uv-g15" id="jIs-j4-PWH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -34,9 +35,9 @@
                     <rect key="frame" x="412" y="8" width="300" height="248"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q51-g3-KYr">
-                            <rect key="frame" x="8" y="8" width="284" height="45"/>
+                            <rect key="frame" x="29" y="8" width="263" height="45"/>
                             <color key="backgroundColor" red="0.91687260841836737" green="0.91687260841836737" blue="0.91687260841836737" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -100,6 +101,13 @@
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prX-Uv-g15">
+                            <rect key="frame" x="8" y="8" width="22" height="45"/>
+                            <color key="backgroundColor" white="0.91987910583941601" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
@@ -298,7 +306,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="clearButtonTapped:" destination="-1" eventType="touchUpInside" id="ZUb-fa-fe9"/>
+                                <action selector="allClearButtonTapped:" destination="-1" eventType="touchUpInside" id="FHN-Fg-qff"/>
                             </connections>
                         </button>
                     </subviews>
