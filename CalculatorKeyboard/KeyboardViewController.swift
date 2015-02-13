@@ -260,5 +260,8 @@ class KeyboardViewController: UIInputViewController {
         (self.textDocumentProxy as UIKeyInput).insertText(answerLabel.text!)
         
     }
+    @IBAction func deleteButtonTapped(sender: AnyObject) {
+        (self.textDocumentProxy as UIKeyInput).deleteBackward()
+    }
     
 }
