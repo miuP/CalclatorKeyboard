@@ -33,6 +33,8 @@ class Calclator {
         if num%1 != 0 {
             return true
         }
+        
+        
         return false
     }
     
@@ -60,7 +62,8 @@ class Calclator {
             self.secondNum = nil
             op = Operator.null
             if Calclator.isDouble(result) {
-                return String(format: "%f", result)
+                let numOfDigits = countDigits(result)
+                return String(format: "%.*f", numOfDigits, result)
             } else {
                 return String(format: "%d", Int(result))
             }
@@ -82,6 +85,16 @@ class Calclator {
         print(firstNum)
         print(op.hashValue)
         println(secondNum)
+    }
+    
+    func countDigits(num: Double) -> Int {
+        var digits: Int = 0;
+        var number = num
+        while (Calclator.isDouble(number) && digits <= 8) {
+            digits += 1
+            number = number * 10
+        }
+        return digits
     }
     
 }

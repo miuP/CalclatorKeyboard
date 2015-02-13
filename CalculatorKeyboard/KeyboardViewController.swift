@@ -19,7 +19,7 @@ class KeyboardViewController: UIInputViewController {
     
     var isDecimal: Bool = false
     var needClear: Bool = true
-    var reveiveInput: Bool = true
+    var receiveInput: Bool = true
     var tagNum: Int = 100
     var isInput: Bool = false
     
@@ -55,7 +55,7 @@ class KeyboardViewController: UIInputViewController {
     }
     
     @IBAction func numberButtonTapped(sender: AnyObject) {
-        if !reveiveInput {
+        if !receiveInput {
             return
         }
         let input: UIButton! = sender as UIButton
@@ -93,7 +93,7 @@ class KeyboardViewController: UIInputViewController {
                 break
         }
         operatorLabel.text = buttonTitle
-        reveiveInput = true
+        receiveInput = true
         isDecimal = false
         isInput = false
     }
@@ -106,7 +106,7 @@ class KeyboardViewController: UIInputViewController {
         
         if calclator.op  != Calclator.Operator.null {
             answerLabel.text = calclator.getAnswer()
-            reveiveInput = false
+            receiveInput = false
             operatorLabel.text = ""
         }
         isInput = false
@@ -114,7 +114,7 @@ class KeyboardViewController: UIInputViewController {
     }
     
     @IBAction func clearButtonTapped(sender: AnyObject) {
-        if !reveiveInput {
+        if !receiveInput {
             return
         }
         answerLabel.text = "0"
@@ -126,12 +126,16 @@ class KeyboardViewController: UIInputViewController {
     @IBAction func allClearButtonTapped(sender: AnyObject) {
         answerLabel.text = "0"
         calclator = Calclator()
-        reveiveInput = true
+        receiveInput = true
         needClear = true
         isInput = false
     }
     
     @IBAction func decimalPointButtonTapped(sender: AnyObject) {
+        if !receiveInput || needClear {
+            return
+        }
+
         if !isDecimal {
             answerLabel.text = answerLabel.text! + "."
         }
