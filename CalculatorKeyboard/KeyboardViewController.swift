@@ -13,10 +13,15 @@ class KeyboardViewController: UIInputViewController {
     @IBOutlet var nextKeyboardButton: UIButton!
     @IBOutlet weak var answerLabel: UILabel!
     @IBOutlet weak var operatorLabel: UILabel!
+    @IBOutlet weak var buttonsView: UIView!
+    @IBOutlet weak var answerAndArrowsView: UIView!
+    
     
     var isDecimal: Bool = false
     var needClear: Bool = true
     var reveiveInput: Bool = true
+    var tagNum: Int = 100
+    var isInput: Bool = false
     
     var calclator = Calclator()
     
@@ -32,8 +37,22 @@ class KeyboardViewController: UIInputViewController {
         self.inputView.addSubview(keyboardView)
         answerLabel.font = UIFont(name:"DBLCDTempBlack", size:25.0)
         operatorLabel.text = ""
+        self.highlightButton()
     }
     
+    
+    func highlightButton() {
+        println(tagNum)
+        var button: UIButton = self.view.viewWithTag(tagNum) as UIButton
+        button.layer.borderWidth = 1
+        button.layer.borderColor = UIColor.blueColor().CGColor
+    }
+    
+    func disHighlightButton() {
+        var button: UIButton = self.view.viewWithTag(tagNum) as UIButton
+        button.layer.borderWidth = 0;
+        
+    }
     
     @IBAction func numberButtonTapped(sender: AnyObject) {
         if !reveiveInput {
@@ -47,14 +66,17 @@ class KeyboardViewController: UIInputViewController {
         if answerLabel.text?.utf16Count < 10 {
             answerLabel.text = answerLabel.text! + input.titleLabel!.text!
         }
+        isInput = true
     }
     
     @IBAction func operatorButtonTapped(sender: AnyObject) {
-        calclator.push(answerLabel.text!)
+        if isInput {
+            calclator.push(answerLabel.text!)
+        }
         needClear = true
         let buttonTitle: String = (sender as UIButton).titleLabel!.text!
+        
         if calclator.op  != Calclator.Operator.null {
-            println(calclator.op)
             answerLabel.text = calclator.getAnswer()
         }
         
@@ -73,9 +95,13 @@ class KeyboardViewController: UIInputViewController {
         operatorLabel.text = buttonTitle
         reveiveInput = true
         isDecimal = false
+        isInput = false
     }
 
     @IBAction func equalButtonTapped(sender: AnyObject) {
+        if !isInput {
+            return
+        }
         calclator.push(answerLabel.text!)
         
         if calclator.op  != Calclator.Operator.null {
@@ -83,6 +109,7 @@ class KeyboardViewController: UIInputViewController {
             reveiveInput = false
             operatorLabel.text = ""
         }
+        isInput = false
         
     }
     
@@ -93,6 +120,7 @@ class KeyboardViewController: UIInputViewController {
         answerLabel.text = "0"
         needClear = true
         isDecimal = false
+        isInput = false
     }
     
     @IBAction func allClearButtonTapped(sender: AnyObject) {
@@ -100,6 +128,7 @@ class KeyboardViewController: UIInputViewController {
         calclator = Calclator()
         reveiveInput = true
         needClear = true
+        isInput = false
     }
     
     @IBAction func decimalPointButtonTapped(sender: AnyObject) {
@@ -114,5 +143,118 @@ class KeyboardViewController: UIInputViewController {
         self.advanceToNextInputMode()
     }
     
+    @IBAction func upKeyTapped(sender: AnyObject) {
+        disHighlightButton()
+        tagNum += 100
+        if tagNum >= 500 {
+            tagNum = tagNum - 400
+        }
+        
+        if (tagNum == 204) {
+            tagNum = 404
+        }
+        
+        highlightButton()
+    }
+    
+    @IBAction func rightKeyTapped(sender: AnyObject) {
+        disHighlightButton()
+        tagNum += 1
+        if tagNum%100 == 5 {
+            tagNum -= 5
+        }
+        
+        if tagNum == 204 {
+            tagNum = 104
+        }
+        
+        if tagNum == 304 {
+            tagNum = 404
+        }
+        highlightButton()
+    }
+    
+    @IBAction func downKeyTapped(sender: AnyObject) {
+        disHighlightButton()
+        tagNum -= 100
+        
+        if tagNum < 100 {
+            tagNum += 400
+        }
+        
+        if tagNum == 204 {
+            tagNum = 104
+        }
+        
+        if tagNum == 304 {
+            tagNum = 404
+        }
+        
+        highlightButton()
+    }
+    
+    @IBAction func leftKeyTapped(sender: AnyObject) {
+        disHighlightButton()
+        tagNum -= 1
+        
+        if tagNum%100 == 99 {
+            tagNum += 5
+        }
+        
+        if tagNum == 204 {
+            tagNum = 104
+        }
+        
+        if tagNum == 304 {
+            tagNum = 404
+        }
+        
+        highlightButton()
+    }
+    
+    
+    @IBAction func enterKeyTapped(sender: AnyObject) {
+        var button: UIButton = self.view.viewWithTag(tagNum) as UIButton
+        switch tagNum {
+        case 100, 200...202, 300...302, 400...402:
+            numberButtonTapped(button)
+        case 103, 203, 303, 403:
+            operatorButtonTapped(button)
+        case 104:
+            allClearButtonTapped(button)
+        case 404:
+            clearButtonTapped(button)
+        case 102:
+            equalButtonTapped(button)
+        case 101:
+            decimalPointButtonTapped(button)
+        default:
+            break
+        }
+    }
+    
+    @IBAction func toggleViewButtonTapped(sender: AnyObject) {
+        let buttonsViewFrame: CGRect = buttonsView.frame
+        let answerAndArrowsViewFrame: CGRect = answerAndArrowsView.frame
+        
+        UIView.animateWithDuration(
+            1.0,
+            delay: 0.0,
+            options: UIViewAnimationOptions.CurveEaseIn,
+            animations: {
+                self.buttonsView.frame = answerAndArrowsViewFrame;
+                self.answerAndArrowsView.frame = buttonsViewFrame
+            },
+            completion:{
+                (value: Bool) in
+                println("Animation End");
+            }
+        );
+    }
+   
+    @IBAction func inputButtonTapped(sender: AnyObject) {
+        (self.textDocumentProxy as UIKeyInput).insertText(answerLabel.text!)
+        
+    }
     
 }

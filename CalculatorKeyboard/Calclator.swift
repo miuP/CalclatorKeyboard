@@ -38,6 +38,9 @@ class Calclator {
     
     private func calclate() -> Double {
         display()
+        if firstNum == nil {
+            return 0
+        }
         if secondNum == nil {
             return firstNum
         }

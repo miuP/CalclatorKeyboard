@@ -6,7 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="KeyboardViewController" customModule="CalculatorKeyboard" customModuleProvider="target">
             <connections>
+                <outlet property="answerAndArrowsView" destination="67M-2D-P5l" id="2cD-q5-Eda"/>
                 <outlet property="answerLabel" destination="q51-g3-KYr" id="tBe-fo-3Q3"/>
+                <outlet property="buttonsView" destination="u4h-GA-5MX" id="DHa-Ce-XBh"/>
                 <outlet property="nextKeyboardButton" destination="JoP-bI-ChO" id="GJ7-st-Cui"/>
                 <outlet property="operatorLabel" destination="prX-Uv-g15" id="jIs-j4-PWH"/>
             </connections>
@@ -31,86 +33,6 @@
                         <action selector="nextKeyboardButtonTapped:" destination="-1" eventType="touchUpInside" id="gc7-J6-d6P"/>
                     </connections>
                 </button>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67M-2D-P5l">
-                    <rect key="frame" x="412" y="8" width="300" height="248"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q51-g3-KYr">
-                            <rect key="frame" x="29" y="8" width="263" height="45"/>
-                            <color key="backgroundColor" red="0.91687260841836737" green="0.91687260841836737" blue="0.91687260841836737" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeR-HW-Dzq">
-                            <rect key="frame" x="126" y="135" width="50" height="50"/>
-                            <color key="backgroundColor" red="0.83880739795918369" green="0.83880739795918369" blue="0.83880739795918369" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="←">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryo-8c-hNS">
-                            <rect key="frame" x="242" y="135" width="50" height="50"/>
-                            <color key="backgroundColor" red="0.83880739800000004" green="0.83880739800000004" blue="0.83880739800000004" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="→">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8f-un-bgu">
-                            <rect key="frame" x="184" y="190" width="50" height="50"/>
-                            <color key="backgroundColor" red="0.83880739800000004" green="0.83880739800000004" blue="0.83880739800000004" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="↓">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRx-Bw-x86">
-                            <rect key="frame" x="184" y="80" width="50" height="50"/>
-                            <color key="backgroundColor" red="0.83880739800000004" green="0.83880739800000004" blue="0.83880739800000004" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="↑">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="8"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nL-8N-XRR">
-                            <rect key="frame" x="184" y="135" width="50" height="50"/>
-                            <color key="backgroundColor" red="0.83880739800000004" green="0.83880739800000004" blue="0.83880739800000004" alpha="1" colorSpace="calibratedRGB"/>
-                            <state key="normal" title="確定">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                    <integer key="value" value="25"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prX-Uv-g15">
-                            <rect key="frame" x="8" y="8" width="22" height="45"/>
-                            <color key="backgroundColor" white="0.91987910583941601" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ipR-7n-ghw">
                     <rect key="frame" x="720" y="216" width="40" height="40"/>
                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -129,7 +51,7 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u4h-GA-5MX">
                     <rect key="frame" x="56" y="8" width="300" height="248"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGY-dd-B9h">
+                        <button opaque="NO" tag="400" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGY-dd-B9h">
                             <rect key="frame" x="8" y="8" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417091836737" green="0.83972417091836737" blue="0.83972417091836737" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="7">
@@ -139,7 +61,7 @@
                                 <action selector="numberButtonTapped:" destination="-1" eventType="touchUpInside" id="ZHe-Ei-SFG"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKP-GQ-A5y">
+                        <button opaque="NO" tag="401" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vKP-GQ-A5y">
                             <rect key="frame" x="66" y="8" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="8">
@@ -149,7 +71,7 @@
                                 <action selector="numberButtonTapped:" destination="-1" eventType="touchUpInside" id="BSg-l9-C8N"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Xz-4D-KVa">
+                        <button opaque="NO" tag="402" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Xz-4D-KVa">
                             <rect key="frame" x="125" y="8" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="9">
@@ -159,7 +81,7 @@
                                 <action selector="numberButtonTapped:" destination="-1" eventType="touchUpInside" id="QGL-wv-6vG"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8l-SH-H1J">
+                        <button opaque="NO" tag="300" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S8l-SH-H1J">
                             <rect key="frame" x="8" y="66" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="4">
@@ -169,7 +91,7 @@
                                 <action selector="numberButtonTapped:" destination="-1" eventType="touchUpInside" id="deT-vi-HwR"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0y-FP-DDb">
+                        <button opaque="NO" tag="301" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0y-FP-DDb">
                             <rect key="frame" x="66" y="66" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="5">
@@ -179,7 +101,7 @@
                                 <action selector="numberButtonTapped:" destination="-1" eventType="touchUpInside" id="6Cw-Ga-BiF"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teK-ue-1UG">
+                        <button opaque="NO" tag="302" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teK-ue-1UG">
                             <rect key="frame" x="125" y="66" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="6">
@@ -189,7 +111,7 @@
                                 <action selector="numberButtonTapped:" destination="-1" eventType="touchUpInside" id="3LW-HQ-RKH"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsh-h1-Ifx">
+                        <button opaque="NO" tag="200" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xsh-h1-Ifx">
                             <rect key="frame" x="8" y="124" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="1">
@@ -199,7 +121,7 @@
                                 <action selector="numberButtonTapped:" destination="-1" eventType="touchUpInside" id="hy5-Pf-U8D"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TD7-kh-8Mt">
+                        <button opaque="NO" tag="201" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TD7-kh-8Mt">
                             <rect key="frame" x="66" y="124" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="2">
@@ -209,7 +131,7 @@
                                 <action selector="numberButtonTapped:" destination="-1" eventType="touchUpInside" id="PSE-H8-GQa"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wj4-rH-fRS">
+                        <button opaque="NO" tag="202" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wj4-rH-fRS">
                             <rect key="frame" x="125" y="124" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="3">
@@ -219,7 +141,7 @@
                                 <action selector="numberButtonTapped:" destination="-1" eventType="touchUpInside" id="bRT-aH-U8a"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnz-Bq-Ve1">
+                        <button opaque="NO" tag="102" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnz-Bq-Ve1">
                             <rect key="frame" x="125" y="182" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="=">
@@ -229,7 +151,7 @@
                                 <action selector="equalButtonTapped:" destination="-1" eventType="touchUpInside" id="Rsn-fl-xnW"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-eR-lYu">
+                        <button opaque="NO" tag="403" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfP-eR-lYu">
                             <rect key="frame" x="183" y="8" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="÷">
@@ -239,7 +161,7 @@
                                 <action selector="operatorButtonTapped:" destination="-1" eventType="touchUpInside" id="Noh-q4-EQV"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRi-DK-Qhw">
+                        <button opaque="NO" tag="303" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RRi-DK-Qhw">
                             <rect key="frame" x="183" y="66" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="×">
@@ -249,7 +171,7 @@
                                 <action selector="operatorButtonTapped:" destination="-1" eventType="touchUpInside" id="Mvz-oj-clG"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-vg-EHn">
+                        <button opaque="NO" tag="203" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDf-vg-EHn">
                             <rect key="frame" x="183" y="124" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="-">
@@ -259,7 +181,7 @@
                                 <action selector="operatorButtonTapped:" destination="-1" eventType="touchUpInside" id="3TI-QW-3of"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UY4-9K-zcf">
+                        <button opaque="NO" tag="103" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UY4-9K-zcf">
                             <rect key="frame" x="183" y="182" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="+">
@@ -269,7 +191,7 @@
                                 <action selector="operatorButtonTapped:" destination="-1" eventType="touchUpInside" id="Rdl-9p-oV4"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbo-Gr-RTc">
+                        <button opaque="NO" tag="100" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbo-Gr-RTc">
                             <rect key="frame" x="8" y="182" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="0">
@@ -279,7 +201,7 @@
                                 <action selector="numberButtonTapped:" destination="-1" eventType="touchUpInside" id="6MY-Mu-3Ia"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qV7-GK-Ymh">
+                        <button opaque="NO" tag="101" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qV7-GK-Ymh">
                             <rect key="frame" x="66" y="183" width="50" height="50"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title=".">
@@ -289,7 +211,7 @@
                                 <action selector="decimalPointButtonTapped:" destination="-1" eventType="touchUpInside" id="tQg-BN-VhE"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJP-Kg-HOi">
+                        <button opaque="NO" tag="404" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJP-Kg-HOi">
                             <rect key="frame" x="242" y="8" width="50" height="108"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="C">
@@ -299,7 +221,7 @@
                                 <action selector="clearButtonTapped:" destination="-1" eventType="touchUpInside" id="9Pv-Tw-4H0"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gp-GJ-2BF">
+                        <button opaque="NO" tag="104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gp-GJ-2BF">
                             <rect key="frame" x="242" y="124" width="50" height="108"/>
                             <color key="backgroundColor" red="0.83972417089999996" green="0.83972417089999996" blue="0.83972417089999996" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="AC">
@@ -307,6 +229,134 @@
                             </state>
                             <connections>
                                 <action selector="allClearButtonTapped:" destination="-1" eventType="touchUpInside" id="FHN-Fg-qff"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZF-lo-gJs">
+                    <rect key="frame" x="364" y="112" width="40" height="40"/>
+                    <color key="backgroundColor" white="0.49880246350364965" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="37"/>
+                    <state key="normal" title="⇄">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="toggleViewButtonTapped:" destination="-1" eventType="touchUpInside" id="RjH-el-ISP"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="67M-2D-P5l">
+                    <rect key="frame" x="412" y="8" width="300" height="248"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q51-g3-KYr">
+                            <rect key="frame" x="29" y="8" width="263" height="45"/>
+                            <color key="backgroundColor" red="0.91687260841836737" green="0.91687260841836737" blue="0.91687260841836737" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xeR-HW-Dzq">
+                            <rect key="frame" x="77" y="135" width="50" height="50"/>
+                            <color key="backgroundColor" red="0.83880739795918369" green="0.83880739795918369" blue="0.83880739795918369" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="←">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="leftKeyTapped:" destination="-1" eventType="touchUpInside" id="DRo-bm-EcT"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ryo-8c-hNS">
+                            <rect key="frame" x="193" y="135" width="50" height="50"/>
+                            <color key="backgroundColor" red="0.83880739800000004" green="0.83880739800000004" blue="0.83880739800000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="→">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="rightKeyTapped:" destination="-1" eventType="touchUpInside" id="CBL-LO-hFX"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V8f-un-bgu">
+                            <rect key="frame" x="135" y="190" width="50" height="50"/>
+                            <color key="backgroundColor" red="0.83880739800000004" green="0.83880739800000004" blue="0.83880739800000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="↓">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="downKeyTapped:" destination="-1" eventType="touchUpInside" id="Apl-G6-wBh"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRx-Bw-x86">
+                            <rect key="frame" x="135" y="80" width="50" height="50"/>
+                            <color key="backgroundColor" red="0.83880739800000004" green="0.83880739800000004" blue="0.83880739800000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="↑">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="upKeyTapped:" destination="-1" eventType="touchUpInside" id="G8O-Nb-SAK"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nL-8N-XRR">
+                            <rect key="frame" x="135" y="135" width="50" height="50"/>
+                            <color key="backgroundColor" red="0.83880739800000004" green="0.83880739800000004" blue="0.83880739800000004" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="確定">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="25"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="enterKeyTapped:" destination="-1" eventType="touchUpInside" id="jUC-zl-FaM"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="+" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prX-Uv-g15">
+                            <rect key="frame" x="8" y="8" width="22" height="45"/>
+                            <color key="backgroundColor" white="0.91987910583941601" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ls3-FW-a6d">
+                            <rect key="frame" x="204" y="198" width="79" height="34"/>
+                            <color key="backgroundColor" white="0.50219548357664234" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                            <state key="normal" title="入力">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="inputButtonTapped:" destination="-1" eventType="touchUpInside" id="wjG-NP-2og"/>
                             </connections>
                         </button>
                     </subviews>
