@@ -33,7 +33,7 @@ class KeyboardViewController: UIInputViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var keyboardView = UINib(nibName:"CalculatorKeyboardView", bundle:nil).instantiateWithOwner(self,options:nil)[0] as UIView
+        var keyboardView = UINib(nibName:"CalculatorKeyboardView", bundle:nil).instantiateWithOwner(self,options:nil)[0] as! UIView
         self.inputView.addSubview(keyboardView)
         answerLabel.font = UIFont(name:"DBLCDTempBlack", size:25.0)
         operatorLabel.text = ""
@@ -43,13 +43,13 @@ class KeyboardViewController: UIInputViewController {
     
     func highlightButton() {
         println(tagNum)
-        var button: UIButton = self.view.viewWithTag(tagNum) as UIButton
+        var button: UIButton = self.view.viewWithTag(tagNum) as! UIButton
         button.layer.borderWidth = 1
-        button.layer.borderColor = UIColor.blueColor().CGColor
+        button.layer.borderColor = UIColor.whiteColor().CGColor
     }
     
     func disHighlightButton() {
-        var button: UIButton = self.view.viewWithTag(tagNum) as UIButton
+        var button: UIButton = self.view.viewWithTag(tagNum) as! UIButton
         button.layer.borderWidth = 0;
         
     }
@@ -58,12 +58,12 @@ class KeyboardViewController: UIInputViewController {
         if !receiveInput {
             return
         }
-        let input: UIButton! = sender as UIButton
+        let input: UIButton! = sender as! UIButton
         if needClear {
             answerLabel.text = ""
             needClear = false
         }
-        if answerLabel.text?.utf16Count < 10 {
+        if count(answerLabel.text!) < 10 {
             answerLabel.text = answerLabel.text! + input.titleLabel!.text!
         }
         isInput = true
@@ -74,7 +74,7 @@ class KeyboardViewController: UIInputViewController {
             calclator.push(answerLabel.text!)
         }
         needClear = true
-        let buttonTitle: String = (sender as UIButton).titleLabel!.text!
+        let buttonTitle: String = (sender as! UIButton).titleLabel!.text!
         
         if calclator.op  != Calclator.Operator.null {
             answerLabel.text = calclator.getAnswer()
@@ -191,7 +191,7 @@ class KeyboardViewController: UIInputViewController {
         }
         
         if tagNum == 304 {
-            tagNum = 404
+            tagNum = 104
         }
         
         highlightButton()
@@ -218,7 +218,7 @@ class KeyboardViewController: UIInputViewController {
     
     
     @IBAction func enterKeyTapped(sender: AnyObject) {
-        var button: UIButton = self.view.viewWithTag(tagNum) as UIButton
+        var button: UIButton = self.view.viewWithTag(tagNum) as! UIButton
         switch tagNum {
         case 100, 200...202, 300...302, 400...402:
             numberButtonTapped(button)
@@ -257,11 +257,11 @@ class KeyboardViewController: UIInputViewController {
     }
    
     @IBAction func inputButtonTapped(sender: AnyObject) {
-        (self.textDocumentProxy as UIKeyInput).insertText(answerLabel.text!)
+        (self.textDocumentProxy as! UIKeyInput).insertText(answerLabel.text!)
         
     }
     @IBAction func deleteButtonTapped(sender: AnyObject) {
-        (self.textDocumentProxy as UIKeyInput).deleteBackward()
+        (self.textDocumentProxy as! UIKeyInput).deleteBackward()
     }
     
 }
